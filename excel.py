@@ -13,9 +13,9 @@ def create_excel():
         print(e)
 
     
-def get_workbook(excel, filepath):
+def get_workbook(filepath):
 
-    if excel is None: return
+    excel = create_excel()
     
     if not "\\" in filepath:
         filepath = os.path.join(getcwd(), filepath)
@@ -63,8 +63,7 @@ if __name__ == "__main__":
     path = r"test"
     new_sheet_name = "newsheet"
     
-    excel = create_excel()
-    wb = get_workbook(excel, path)
+    wb = get_workbook(path)
     ws = get_sheet(wb, new_sheet_name)
     
     if not ws is None:
