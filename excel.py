@@ -1,13 +1,13 @@
-import win32com.client
 import os.path
 from os import getcwd
+import win32com.client as win32
 
 
 def create_excel():
     
     try:
-        excel = win32com.client.Dispatch("Excel.Application")
-        excel.Visible =1
+        excel = win32.gencache.EnsureDispatch('Excel.Application')
+        excel.Visible = 1
         return excel
     except Exception as e:
         print(e)
